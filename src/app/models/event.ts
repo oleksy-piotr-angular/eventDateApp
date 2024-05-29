@@ -9,5 +9,4 @@ export interface Event {
     treshold?: number;
     unlockDate?: number;
   };
-  id: string;
 }
