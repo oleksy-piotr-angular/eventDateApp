@@ -11,3 +11,7 @@ pola: deviceId, eventDate, type, guzik szczegóły.
 • Po kliknięciu w guzik szczegóły system powinien wyświetlić modal ze szczegółami
 konkretnego zdarzenia z uwzględnieniem różnych struktur danych dla
 poszczególnych typów zdarzeń.
+
+NOTE:
+po sklonowaniu repo i zainstalowaniu zależności NPM, przed uruchomieniem "ng s" należy uruchomić mock API
+"npm run start:api".

@@ -1,9 +1,9 @@
-<div #appPlaceHolder></div>
+<<ng-container #appPlaceHolder></ng-container>
 <h1>Event List:</h1>
 <ol>
   <li *ngFor="let event of events$ | async">
     <p>DeviceID: {{ event.deviceId }}</p>
-    <p>eventDate: {{ checkDate(event.eventDate) }}</p>
+    <p>eventDate: {{ timestampConverter(event.eventDate) }}</p>
     <p>type: {{ event.type }}</p>
     <button (click)="showDetails(event)">Details</button>
   </li>

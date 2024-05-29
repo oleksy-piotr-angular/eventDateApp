@@ -22,9 +22,6 @@ export class EventsListComponent {
   ngOnInit(): void {
     this.events$ = this.http.getEvents();
   }
-  checkDate(date: number) {
-    return new Date(date).toLocaleString();
-  }
   showDetails(_event: Event) {
     this.componentHost.clear();
     const detailsRef = this.componentHost.createComponent(
@@ -36,7 +33,7 @@ export class EventsListComponent {
       temp: _event.evtData.temp,
       treshold: _event.evtData.treshold,
       unlockDate: _event.evtData.unlockDate
-        ? this.checkDate(_event.evtData.unlockDate)
+        ? this.timestampConverter(_event.evtData.unlockDate)
         : undefined,
     };
     detailsRef.setInput('eventDetails', eventDetails);
@@ -44,5 +41,9 @@ export class EventsListComponent {
       this.closeDetailSub.unsubscribe();
       this.componentHost.clear();
     });
+  }
+
+  timestampConverter(timestamp: number) {
+    return new Date(timestamp * 1000).toLocaleString();
   }
 }
