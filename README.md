@@ -1,8 +1,8 @@
 # EventDateApp
 
-System z wystawia informację o zarejestrowanych zdarzeniach w formacie json
+System wystawia informację o zarejestrowanych zdarzeniach w formacie json
 
-Dla podanych danych zaprojektuj w środowisku Angular:
+Dla podanych danych zaprojektowano w środowisku Angular:
 
 • widok listy zdarzeń z symulacją asynchronicznego pobrania danych z api. Użyj
 powyższych przykładowych danych jako mock. System na liście powinien wyświetlić

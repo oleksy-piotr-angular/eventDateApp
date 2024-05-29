@@ -1,1 +1,9 @@
-<p>events-list works!</p>
+<h1>Event List:</h1>
+<ol>
+  <li *ngFor="let event of events$ | async">
+    <p>deviceId: {{ event.deviceId }}</p>
+    <p>eventDate: {{ checkDate(event.eventDate) }}</p>
+    <p>type: {{ event.type }}</p>
+    <button>Details</button>
+  </li>
+</ol>
