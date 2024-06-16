@@ -1,24 +1,14 @@
 <div class="backdrop"></div>
 <div class="details-box">
   <h2>Event Data:</h2>
-  <div *ngIf="eventDetails; else noEventData">
-    <p *ngIf="eventDetails.reasonCode" style="font-size: 1em; font-weight: 900">
-      Reason Code: {{ eventDetails.reasonCode }}
+  <div *ngIf="eventDetails; else noEventDetailsData">
+    @for (detail of eventDetailsOutput; track $index) {
+    <p style="font-size: 1em; font-weight: 900">
+      {{ detail.key }}: {{ detail.value }}
     </p>
-    <p *ngIf="eventDetails.reasonText" style="font-size: 1em; font-weight: 900">
-      Reason Text: "{{ eventDetails.reasonText }}"
-    </p>
-    <p *ngIf="eventDetails.temp" style="font-size: 1em; font-weight: 900">
-      Temperature: {{ eventDetails.temp }}
-    </p>
-    <p *ngIf="eventDetails.treshold" style="font-size: 1em; font-weight: 900">
-      Threshold: {{ eventDetails.treshold }}
-    </p>
-    <p *ngIf="eventDetails.unlockDate" style="font-size: 1em; font-weight: 900">
-      Unlock Date: {{ eventDetails.unlockDate }}
-    </p>
+    }
   </div>
-  <ng-template #noEventData>No Event Data...</ng-template>
+  <ng-template #noEventDetailsData>No Event details Data...</ng-template>
   <div class="my-2 float-end">
     <button type="button" class="btn btn-primary" (click)="onCloseModal()">
       OK
